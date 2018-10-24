@@ -2,8 +2,6 @@
 
 Made by [Luciana V. Frutos Ramos]
 
-![Screenshot](../p8_todoListApp.png)
-
 Add your tasks, mark them done... or not, who cares! I sure don't
 
 Manages one by one or all together
@@ -25,8 +23,6 @@ Find and open `index.html`
 
 Comparison of this app to the competitor [todolistme.net](http://todolistme.net/)
 
-[WATCH PDF](../p8_lvfr.pdf)
-
 ### Fixed Bugs
 
 1. controller.js: Fixed typo in `addItem` function
@@ -37,7 +33,4 @@ Comparison of this app to the competitor [todolistme.net](http://todolistme.net/
 
 4. SpecRunner.html: added missing tests
 
-### Jasmine Tests
-
-[GO TO THE TESTS](../test/SpecRunner.html)
 
