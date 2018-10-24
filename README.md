@@ -19,6 +19,8 @@ Run`npm install` to install the necessary dependencies
 
 Find and open `index.html`
 
+To run Jasmine tests open the `SpecRunner.html` file
+
 ### Comparison
 
 Comparison of this app to the competitor [todolistme.net](http://todolistme.net/)
