@@ -59,7 +59,6 @@ describe('controller', function () {
 	});
 
 	it('should show entries on start-up', function () {
-		// TODO: write test
 			setUpModel([]);
 
 			subject.setView('');
@@ -88,18 +87,20 @@ describe('controller', function () {
 		});
 
 		it('should show active entries', function () {
-			// TODO: write test
-			var todo = {title: 'my todo', completed: true};
+			var todo = {title: 'my todo', completed: false};
 
 			setUpModel([todo]);
 
-			subject.setView('');
+			subject.setView('#/active');
 			
-			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
+			expect(model.read).toHaveBeenCalledWith({ completed: false }, jasmine.any(Function));
+
+            expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
+
+            expect(todo.completed).toEqual(false);
 		});
 
 		it('should show completed entries', function () {
-			// TODO: write test
 			var todo = {title: 'my todo', completed: true};
 
 			setUpModel([todo]);
@@ -153,14 +154,12 @@ describe('controller', function () {
 	});
 
 	it('should highlight "All" filter by default', function () {
-		// TODO: write test
 		subject.setView('');
 
 		expect(view.render).toHaveBeenCalledWith('setFilter', '');
 	});
 
 	it('should highlight "Active" filter when switching to active view', function () {
-		// TODO: write test
 
 		subject.setView('/active');
 
@@ -169,19 +168,16 @@ describe('controller', function () {
 
 	describe('toggle all', function () {
 		it('should toggle all todos to completed', function () {
-			// TODO: write test !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			setUpModel([{id:123456, title: 'my todo', completed: false}]);
 
 			subject.setView('');
 
-			//subject.toggleAll(true)
 			view.trigger('toggleAll', true);
 
 			expect(view.render).toHaveBeenCalledWith('toggleAll', {checked: true});			
 		});
 
 		it('should update the view', function () {
-			// TODO: write test
 			setUpModel([{id:123456, title: 'my todo', completed: false}]);
 
 			subject.setView('');
@@ -193,7 +189,6 @@ describe('controller', function () {
 
 	describe('new todo', function () {
 		it('should add a new todo to the model', function () {
-			// TODO: write test
 			setUpModel([]);
 
 			subject.setView('');
@@ -240,7 +235,6 @@ describe('controller', function () {
 
 	describe('element removal', function () {
 		it('should remove an entry from the model', function () {
-			// TODO: write test
 			var todo = {id: 42, title: 'my todo', completed: true};
 			setUpModel([todo]);
 
